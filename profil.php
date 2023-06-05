@@ -2,7 +2,7 @@
    $db = new PDO('mysql:host=localhost; dbname=moduleconnexion;charset=utf8','root','');
     session_start();
     echo $_SESSION['id'];
-
+   //Vérification de la session et fonction pour la vérification du mot de passe
     function verify($password) {
         if(strlen($password) > 8){
             return TRUE;
@@ -13,7 +13,7 @@
         }
     }
 
-
+   //si post n'est pas empty alors créer des identifiants et si le mot de passe est bon alors faire une requ
     if(!empty($_POST)) {
         
         $login = $_POST["login"];
